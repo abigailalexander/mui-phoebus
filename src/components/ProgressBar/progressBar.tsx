@@ -28,7 +28,7 @@ export default function ProgressBar(props: ProgressBarProps) {
     // Could also possibly add a box shadow like you get in phoebus
     // TO DO LATER
     return (
-        <Box sx={{ width: "100%", border: "1px solid rgba(190, 190, 190)", borderRadius: 1 }}>
+        <Box sx={{ width: props.w, height: props.h, border: "1px solid rgba(190, 190, 190)", borderRadius: 1 }}>
             <CustomLinearProgress variant="determinate" value={props.value} />
         </Box>
     );
