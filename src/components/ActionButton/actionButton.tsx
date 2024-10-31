@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button, styled } from "@mui/material";
+import { diamondTheme } from "../../theme";
 
 type ActionButtonProps = {
     x: number,
@@ -24,6 +25,14 @@ const CustomButton = styled(Button)({
     minWidth: 0,
     borderWidth: "1px",
     lineHeight: "unset",
+    "&:hover": {
+        opacity: 0.9,
+        borderColor: "rgba(170, 170, 170)",
+    },
+    "&:focus": {
+        borderColor: diamondTheme.palette.secondary.main,
+        borderWidth: "2px"
+    }
 })
 
 export default function ActionButton(props: ActionButtonProps) {
