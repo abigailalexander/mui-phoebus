@@ -22,9 +22,9 @@ export const diamondTheme = createTheme({
             main: "rgba(29, 41, 69)",
             contrastText: "rgba(255, 255, 255)"
         },
-        // grey
+        // Lighter blue
         secondary: {
-            main: "rgba(240, 240, 240, 255)"
+            main: "rgba(37, 150, 190)"
         },
     }
 });
