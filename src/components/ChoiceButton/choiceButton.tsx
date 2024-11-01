@@ -13,6 +13,7 @@ type ChoiceButtonProps = {
 }
 
 const CustomToggleButton = styled(ToggleButton)({
+    position: "absolute",
     fontFamily: "Arial",
     fontSize: 14,
     color: "black",
@@ -55,7 +56,7 @@ export default function ChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+                return (<CustomToggleButton sx={{ left: props.x, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
             })}
         </ToggleButtonGroup>
     );

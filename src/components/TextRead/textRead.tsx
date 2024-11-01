@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled, TextField, } from "@mui/material";
 
 const CustomTextField = styled(TextField)({
+    position: "absolute",
     "& .MuiInputBase-input.Mui-disabled": {
         WebkitTextFillColor: "rgba(29, 41, 69, 1)",
         fontFamily: "monospace",
@@ -31,6 +32,6 @@ type TextReadProps = {
 
 export default function TextRead(props: TextReadProps) {
     return (
-        <CustomTextField sx={{ width: props.w, height: props.h }} value={props.value} variant="outlined" disabled={true}></CustomTextField>
+        <CustomTextField sx={{ left: props.x, top: props.y, width: props.w, height: props.h }} value={props.value} variant="outlined" disabled={true}></CustomTextField>
     )
 }

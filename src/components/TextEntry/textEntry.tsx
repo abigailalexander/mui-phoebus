@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled, TextField, } from "@mui/material";
 
 const CustomTextField = styled(TextField)({
+    position: "absolute",
     '& .MuiInputBase-input': {
         disableUnderline: true,
         backgroundColor: 'white',
@@ -29,6 +30,6 @@ type TextEntryProps = {
 
 export default function TextEntry(props: TextEntryProps) {
     return (
-        <CustomTextField sx={{ width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>
+        <CustomTextField sx={{ left: props.x, top: props.y, width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>
     )
 }

@@ -12,6 +12,7 @@ type ActionButtonProps = {
 }
 
 const CustomButton = styled(Button)({
+    position: "absolute",
     ".MuiButton-root": {
         minWidth: "1px"
     },
@@ -45,6 +46,6 @@ export default function ActionButton(props: ActionButtonProps) {
         borderColor = "primary.main";
     }
     return (
-        <CustomButton variant="outlined" sx={{ width: props.w, height: props.h, color: textColor, backgroundColor: bgColor, fontSize: (props.openScreen ? 14 : 12), borderColor: borderColor }}>{props.value}</CustomButton>
+        <CustomButton variant="outlined" sx={{ left: props.x, top: props.y, width: props.w, height: props.h, color: textColor, backgroundColor: bgColor, fontSize: (props.openScreen ? 14 : 12), borderColor: borderColor }}>{props.value}</CustomButton>
     )
 }

@@ -12,7 +12,7 @@ type GroupBoxProps = {
 
 export default function GroupBox(props: GroupBoxProps) {
     return (
-        <Box component="fieldset" sx={{ width: props.w, height: props.h, border: "1px solid black", backgroundColor: "transparent" }}>
+        <Box component="fieldset" sx={{ position: "absolute", left: props.x, top: props.y, width: props.w, height: props.h, border: "1px solid black", backgroundColor: "transparent" }}>
             <legend>{props.value}</legend>
             {props.children}
         </Box>

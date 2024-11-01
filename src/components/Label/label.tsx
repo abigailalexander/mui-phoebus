@@ -11,6 +11,7 @@ type LabelProps = {
 }
 
 const CustomTypography = styled(Typography)({
+    position: "absolute",
     fontFamily: "Arial",
     fontSize: 14,
     color: diamondTheme.palette.primary.main,
@@ -22,6 +23,6 @@ const CustomTypography = styled(Typography)({
 
 export default function Label(props: LabelProps) {
     return (
-        <CustomTypography sx={{ height: props.h, width: props.w }}>{props.value}</CustomTypography>
+        <CustomTypography sx={{ left: props.x, top: props.y, height: props.h, width: props.w }}>{props.value}</CustomTypography>
     )
 }
