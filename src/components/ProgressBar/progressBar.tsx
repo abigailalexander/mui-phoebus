@@ -30,8 +30,8 @@ export default function ProgressBar(props: ProgressBarProps) {
     // Could also possibly add a box shadow like you get in phoebus
     // TO DO LATER
     return (
-        <Box sx={{ left: props.x, top: props.y, width: props.w, height: props.h, border: "1px solid rgba(190, 190, 190)", borderRadius: 1, overflow: "visible" }}>
-            <CustomLinearProgress sx={{ width: props.w - 4, height: props.h - 4 }} variant="determinate" value={props.value} />
+        <Box sx={{ position: "absolute", left: props.x, top: props.y, width: props.w - 2, height: props.h - 2, border: "1px solid rgba(190, 190, 190)", borderRadius: 1, overflow: "visible" }}>
+            <CustomLinearProgress sx={{ width: props.w - 6, height: props.h - 6 }} variant="determinate" value={props.value} />
         </Box>
     );
 }
