@@ -27,6 +27,7 @@ const CustomMenuItem = styled(MenuItem)({
     fontSize: 14,
     fontFamily: "Arial",
     color: "black",
+    padding: "0px",
     "&.Mui-selected": {
         backgroundColor: diamondTheme.palette.secondary.main,
         "&:hover": {
@@ -51,7 +52,7 @@ export default function DropDown(props: DropDownProps) {
     const [value, setValue] = React.useState(firstValue);
 
     return (
-        <FormControl sx={{ left: props.x, top: props.y, m: 1, width: props.w, height: props.h, padding: 0 }}>
+        <FormControl sx={{ position: "absolute", left: props.x, top: props.y, width: props.w, height: props.h }}>
             <CustomSelect
                 sx={{ width: props.w, height: props.h }}
                 labelId="dropdown"
