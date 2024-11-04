@@ -27,7 +27,7 @@ type TextEntryProps = {
     w: number,
     h: number,
     value: string | number,
-    disabled: boolean
+    disabled?: boolean
 }
 
 export default function TextEntry(props: TextEntryProps) {
