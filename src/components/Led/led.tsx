@@ -4,7 +4,7 @@ import { Box, styled } from "@mui/material";
 const CustomBox = styled(Box)({
     position: "absolute",
     borderRadius: "50%",
-    border: "2px solid rgba(107, 107, 107)"
+    border: "2px solid rgba(76, 100, 171)"
 });
 
 type LedProps = {
@@ -16,7 +16,7 @@ type LedProps = {
 }
 
 export default function Led(props: LedProps) {
-    const bgColor = props.value === 1 ? "rgba(60, 255, 60)" : "rgba(237, 237, 237)"
+    const bgColor = props.value === 1 ? "rgba(128, 255, 255)" : "rgba(29, 41, 69)"
     return (
         <CustomBox sx={{ left: props.x, top: props.y, width: props.w - 2, height: props.h - 2, backgroundColor: bgColor }}>
         </CustomBox>
