@@ -14,7 +14,7 @@ const CustomLinearProgress = styled(LinearProgress)({
     },
     [`& .${linearProgressClasses.bar}`]: {
         borderRadius: 5,
-        backgroundColor: diamondTheme.palette.primary.main,
+        backgroundColor: "rgba(76, 100, 171)",
     },
 });
 
