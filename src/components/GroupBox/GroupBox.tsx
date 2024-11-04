@@ -12,9 +12,11 @@ type GroupBoxProps = {
 
 export default function GroupBox(props: GroupBoxProps) {
     return (
-        <Box component="fieldset" sx={{ position: "absolute", left: props.x, top: props.y, width: props.w, height: props.h, border: "1px solid black", backgroundColor: "transparent" }}>
-            <legend>{props.value}</legend>
-            {props.children}
-        </Box>
+        <div style={{ position: "absolute", width: props.w, height: props.h, left: props.x, top: props.y, }}>
+            <Box component="fieldset" sx={{ paddingTop: 0, paddingBottom: 0, paddingRight: 0, paddingLeft: "10px", position: "absolute", width: props.w - 24, height: props.h - 10, border: "1px solid black", backgroundColor: "transparent" }}>
+                <legend style={{ fontFamily: "Arial", fontSize: 15 }}>{props.value}</legend>
+                {props.children}
+            </Box>
+        </div>
     )
 }
