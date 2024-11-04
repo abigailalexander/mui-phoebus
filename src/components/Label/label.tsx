@@ -7,7 +7,8 @@ type LabelProps = {
     y: number,
     w: number,
     h: number,
-    value: string
+    value: string,
+    fontSize?: number
 }
 
 const CustomTypography = styled(Typography)({
@@ -23,6 +24,6 @@ const CustomTypography = styled(Typography)({
 
 export default function Label(props: LabelProps) {
     return (
-        <CustomTypography sx={{ left: props.x, top: props.y, height: props.h, width: props.w }}>{props.value}</CustomTypography>
+        <CustomTypography sx={{ left: props.x, top: props.y, height: props.h, width: props.w, fontSize: props.fontSize }}>{props.value}</CustomTypography>
     )
 }
