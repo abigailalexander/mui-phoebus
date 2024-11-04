@@ -8,7 +8,8 @@ type ActionButtonProps = {
     w: number,
     h: number,
     value: string
-    openScreen: boolean
+    openScreen: boolean,
+    fontSize?: number
 }
 
 const CustomButton = styled(Button)({
@@ -25,7 +26,7 @@ const CustomButton = styled(Button)({
     minHeight: 0,
     minWidth: 0,
     borderWidth: "1px",
-    lineHeight: "unset",
+    overflow: "hidden",
     "&:hover": {
         opacity: 0.9,
         borderColor: "rgba(170, 170, 170)",
@@ -46,6 +47,6 @@ export default function ActionButton(props: ActionButtonProps) {
         borderColor = "primary.main";
     }
     return (
-        <CustomButton variant="outlined" sx={{ left: props.x, top: props.y, width: props.w, height: props.h, color: textColor, backgroundColor: bgColor, fontSize: (props.openScreen ? 14 : 12), borderColor: borderColor }}>{props.value}</CustomButton>
+        <CustomButton variant="outlined" sx={{ left: props.x, top: props.y, width: props.w, height: props.h, color: textColor, backgroundColor: bgColor, fontSize: props.fontSize || 12, borderColor: borderColor }}>{props.value}</CustomButton>
     )
 }
