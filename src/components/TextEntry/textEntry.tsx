@@ -25,11 +25,12 @@ type TextEntryProps = {
     y: number,
     w: number,
     h: number,
-    value: string | number
+    value: string | number,
+    disabled: boolean
 }
 
 export default function TextEntry(props: TextEntryProps) {
     return (
-        <CustomTextField sx={{ left: props.x, top: props.y, width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>
+        <CustomTextField disabled={props.disabled} sx={{ left: props.x, top: props.y, width: props.w - 2, height: props.h - 2 }} defaultValue={props.value} variant="filled"></CustomTextField>
     )
 }
