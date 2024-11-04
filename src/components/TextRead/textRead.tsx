@@ -4,10 +4,10 @@ import { styled, TextField, } from "@mui/material";
 const CustomTextField = styled(TextField)({
     position: "absolute",
     "& .MuiInputBase-input.Mui-disabled": {
-        WebkitTextFillColor: "rgba(29, 41, 69, 1)",
+        WebkitTextFillColor: "white",
         textAlign: "center",
         verticalAlign: "center",
-        backgroundColor: "rgba(240, 240, 240, 255)",
+        backgroundColor: "rgba(76, 100, 171)",
     },
     "& .MuiInputBase-input.MuiOutlinedInput-input": {
         padding: "0px",
@@ -16,7 +16,7 @@ const CustomTextField = styled(TextField)({
     },
     "& .MuiInputBase-root.Mui-disabled": {
         "& > fieldset": {
-            borderColor: "rgba(240, 240, 240, 255)",
+            borderColor: "rgba(76, 100, 171)",
         }
     }
 })
