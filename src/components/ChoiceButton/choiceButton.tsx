@@ -3,14 +3,14 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { styled } from '@mui/material';
 import { diamondTheme } from '../../theme';
+import { BaseProps } from '../../utils/baseProps';
 
-type ChoiceButtonProps = {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-    value: string[]
+
+type ChoiceButtonComponentProps = {
+    value: string[],
 }
+
+type ChoiceButtonProps = BaseProps & ChoiceButtonComponentProps;
 
 const CustomToggleButton = styled(ToggleButton)({
     position: "absolute",
@@ -40,6 +40,7 @@ const CustomToggleButton = styled(ToggleButton)({
 })
 
 export default function ChoiceButton(props: ChoiceButtonProps) {
+    const groupShift = props.inGroup ? 8 : 0;
     const [alignment, setAlignment] = React.useState(props.value[0]);
     // TO DO
     /**
@@ -48,7 +49,7 @@ export default function ChoiceButton(props: ChoiceButtonProps) {
      */
     return (
         <ToggleButtonGroup
-            sx={{ width: props.w, height: props.h }}
+            sx={{ left: props.x, top: props.y, width: props.w, height: props.h }}
             color="primary"
             value={alignment}
             exclusive
@@ -56,7 +57,31 @@ export default function ChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ left: props.x, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+            })}
+        </ToggleButtonGroup>
+    );
+}
+
+export function MuiChoiceButton(props: ChoiceButtonProps) {
+    const groupShift = props.inGroup ? 8 : 0;
+    const [alignment, setAlignment] = React.useState(props.value[0]);
+    // TO DO
+    /**
+     * add shadow to focus blue border
+     * add shadow to button itself
+     */
+    return (
+        <ToggleButtonGroup
+            sx={{ left: props.x, top: props.y, width: props.w, height: props.h }}
+            color="primary"
+            value={alignment}
+            exclusive
+            onChange={(e, newAlignment) => { setAlignment(newAlignment) }}
+            aria-label="test"
+        >
+            {props.value.map((item) => {
+                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
             })}
         </ToggleButtonGroup>
     );

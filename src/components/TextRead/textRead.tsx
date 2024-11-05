@@ -1,5 +1,6 @@
 import * as React from "react";
-import { styled, TextField, } from "@mui/material";
+import { styled, TextField, Typography, } from "@mui/material";
+import { BaseProps } from "../../utils/baseProps";
 
 const CustomTextField = styled(TextField)({
     position: "absolute",
@@ -21,16 +22,23 @@ const CustomTextField = styled(TextField)({
     }
 })
 
-type TextReadProps = {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-    value: string | number
+
+type TextReadComponentProps = {
+    value: string | number,
 }
 
+type TextReadProps = BaseProps & TextReadComponentProps;
+
 export default function TextRead(props: TextReadProps) {
+    const groupShift = props.inGroup ? 8 : 0;
     return (
-        <CustomTextField sx={{ "& .MuiInputBase-input.MuiOutlinedInput-input": { height: props.h }, left: props.x, top: props.y, width: props.w, height: props.h }} value={props.value} variant="outlined" disabled={true}></CustomTextField>
+        <CustomTextField sx={{ "& .MuiInputBase-input.MuiOutlinedInput-input": { height: props.h }, left: props.x + groupShift, top: props.y, width: props.w, height: props.h }} value={props.value} variant="outlined" disabled={true}></CustomTextField>
+    )
+}
+
+export function MuiTextRead(props: TextReadProps) {
+    const groupShift = props.inGroup ? 8 : 0;
+    return (
+        <Typography sx={{ position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h, fontSize: 12, fontFamily: "monospace" }}>{props.value}</Typography>
     )
 }

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { styled, TextField, } from "@mui/material";
+import { OutlinedInput, styled, TextField, } from "@mui/material";
+import { BaseProps } from "../../utils/baseProps";
 
 const CustomTextField = styled(TextField)({
     position: "absolute",
@@ -21,17 +22,23 @@ const CustomTextField = styled(TextField)({
     }
 })
 
-type TextEntryProps = {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
+type TextEntryComponentProps = {
     value: string | number,
-    disabled?: boolean
+    disabled?: boolean,
 }
 
+type TextEntryProps = BaseProps & TextEntryComponentProps;
+
 export default function TextEntry(props: TextEntryProps) {
+    const groupShift = props.inGroup ? 8 : 0;
     return (
-        <CustomTextField disabled={props.disabled} sx={{ left: props.x, top: props.y, width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>
+        <CustomTextField disabled={props.disabled} sx={{ left: props.x + groupShift, top: props.y, width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>
+    )
+}
+
+export function MuiTextEntry(props: TextEntryProps) {
+    const groupShift = props.inGroup ? 8 : 0;
+    return (
+        <OutlinedInput disabled={props.disabled} sx={{ textAlign: "center", position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h, fontSize: 12, fontFamily: "monospace" }} defaultValue={props.value} ></OutlinedInput>
     )
 }

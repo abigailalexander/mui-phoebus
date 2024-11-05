@@ -1,6 +1,7 @@
 import * as React from "react";
 import { FormControl, MenuItem, Select, styled } from "@mui/material";
 import { diamondTheme } from "../../theme";
+import { BaseProps } from "../../utils/baseProps";
 
 const CustomSelect = styled(Select)({
     position: "absolute",
@@ -39,20 +40,19 @@ const CustomMenuItem = styled(MenuItem)({
     }
 })
 
-type DropDownProps = {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
-    value: string[]
+type DropDownComponentProps = {
+    value: string[],
 }
 
+type DropDownProps = BaseProps & DropDownComponentProps;
+
 export default function DropDown(props: DropDownProps) {
+    const groupShift = props.inGroup ? 8 : 0;
     let firstValue = props.value[0] || "";
     const [value, setValue] = React.useState(firstValue);
 
     return (
-        <FormControl sx={{ position: "absolute", left: props.x, top: props.y, width: props.w, height: props.h }}>
+        <FormControl sx={{ position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h }}>
             <CustomSelect
                 sx={{ width: props.w, height: props.h }}
                 labelId="dropdown"
@@ -65,6 +65,30 @@ export default function DropDown(props: DropDownProps) {
                     return (<CustomMenuItem sx={{ height: 25 }} value={item} key={item}>{item}</CustomMenuItem>)
                 })}
             </CustomSelect>
+        </FormControl>
+
+    );
+}
+
+export function MuiDropDown(props: DropDownProps) {
+    const groupShift = props.inGroup ? 8 : 0;
+    let firstValue = props.value[0] || "";
+    const [value, setValue] = React.useState(firstValue);
+
+    return (
+        <FormControl sx={{ position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h }}>
+            <Select
+                sx={{ width: props.w, height: props.h, fontSize: 14 }}
+                labelId="dropdown"
+                id="dropdown"
+                value={value}
+                label=""
+                onChange={(e) => setValue(e.target.value as string)}
+            >
+                {props.value.map((item) => {
+                    return (<MenuItem sx={{ height: 25 }} value={item} key={item}>{item}</MenuItem>)
+                })}
+            </Select>
         </FormControl>
 
     );
