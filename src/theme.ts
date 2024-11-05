@@ -1,19 +1,11 @@
 import * as React from 'react';
 import { createTheme } from '@mui/material/styles';
 
-declare module '@mui/material/styles' {
-    interface Theme {
-        status: {
-            danger: string;
-        };
+export const muiTheme = createTheme({
+    palette: {
+        mode: "light"
     }
-    // allow configuration using `createTheme`
-    interface ThemeOptions {
-        status?: {
-            danger?: string;
-        };
-    }
-}
+});
 
 export const diamondTheme = createTheme({
     palette: {
