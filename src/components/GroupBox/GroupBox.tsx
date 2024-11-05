@@ -11,11 +11,18 @@ type GroupBoxProps = {
 }
 
 export default function GroupBox(props: GroupBoxProps) {
+    const renderChildren = () => {
+        return React.Children.map(props.children, (child) => {
+            return React.cloneElement(child, {
+                inGroup: true,
+            });
+        });
+    };
     return (
         <div style={{ position: "absolute", width: props.w, height: props.h, left: props.x, top: props.y, }}>
-            <Box component="fieldset" sx={{ paddingTop: 0, paddingBottom: 0, paddingRight: 0, paddingLeft: "10px", position: "absolute", width: props.w - 24, height: props.h - 10, border: "1px solid black", backgroundColor: "transparent" }}>
-                <legend style={{ fontFamily: "Arial", fontSize: 15 }}>{props.value}</legend>
-                {props.children}
+            <Box component="fieldset" sx={{ left: 10, padding: "0px", paddingLeft: "8px", position: "absolute", width: props.w - 20, height: props.h - 10, border: "1px solid", backgroundColor: "transparent" }}>
+                <legend style={{ fontFamily: "Arial", fontSize: 14 }}>{props.value}</legend>
+                {renderChildren()}
             </Box>
         </div>
     )
