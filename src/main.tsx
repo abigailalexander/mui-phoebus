@@ -8,7 +8,7 @@ import { diamondTheme, muiTheme } from './theme.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={diamondTheme}>
+    <ThemeProvider theme={import.meta.env.VITE_COMPONENT_STYLE === "mui" ? muiTheme : diamondTheme}>
       <CssBaseline />
       <App />
     </ThemeProvider>

@@ -27,9 +27,9 @@ type TextEntryComponentProps = {
     disabled?: boolean,
 }
 
-type TextEntryProps = BaseProps & TextEntryComponentProps;
+export type TextEntryProps = BaseProps & TextEntryComponentProps;
 
-export default function TextEntry(props: TextEntryProps) {
+export default function PhoebusTextEntry(props: TextEntryProps) {
     const groupShift = props.inGroup ? 8 : 0;
     return (
         <CustomTextField disabled={props.disabled} sx={{ left: props.x + groupShift, top: props.y, width: props.w, height: props.h }} defaultValue={props.value} variant="filled"></CustomTextField>

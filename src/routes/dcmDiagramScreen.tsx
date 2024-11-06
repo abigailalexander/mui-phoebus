@@ -1,16 +1,15 @@
 import * as React from "react";
-import ActionButton from "../components/ActionButton/actionButton";
+import { ActionButton } from "../components/widgets";
 import GroupBox from "../components/GroupBox/GroupBox";
 import Led from "../components/Led/led";
-import ProgressBar from "../components/ProgressBar/progressBar";
-import TextEntry from "../components/TextEntry/textEntry";
-import TextRead from "../components/TextRead/textRead";
+import { TextEntry } from "../components/widgets";
+import { TextRead } from "../components/widgets";
 import { Box } from "@mui/material";
-import Label from "../components/Label/label";
+import { Label } from "../components/widgets";
 
 export default function DCMDiagramScreen() {
     return (
-        <Box sx={{ backgroundColor: "rgba(240, 240, 240)", position: "absolute", left: 0, top: 0, width: 1000, height: 520 }}>
+        <Box sx={{ position: "absolute", left: 0, top: 0, width: 1000, height: 520 }}>
             <GroupBox x={263} y={0} w={205} h={120} value={"1st Crystal Roll"}>
                 <ActionButton x={0} y={10} w={30} h={20} value="-" openScreen={false}></ActionButton>
                 <TextEntry x={35} y={10} w={100} h={20} value={"0.100"} disabled={false}></TextEntry>

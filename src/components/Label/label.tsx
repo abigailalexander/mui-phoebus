@@ -9,7 +9,7 @@ type LabelComponentProps = {
     fontSize?: number
 }
 
-type LabelProps = BaseProps & LabelComponentProps;
+export type LabelProps = BaseProps & LabelComponentProps;
 
 const CustomTypography = styled(Typography)({
     position: "absolute",
@@ -22,7 +22,7 @@ const CustomTypography = styled(Typography)({
 })
 
 
-export default function Label(props: LabelProps) {
+export default function PhoebusLabel(props: LabelProps) {
     const groupShift = props.inGroup ? 8 : 0;
     return (
         <CustomTypography sx={{ left: props.x + groupShift, top: props.y, height: props.h, width: props.w, fontSize: props.fontSize }}>{props.value}</CustomTypography>

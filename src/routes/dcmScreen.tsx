@@ -1,15 +1,15 @@
 import * as React from "react";
-import ActionButton from "../components/ActionButton/actionButton";
+import { ActionButton } from "../components/widgets";
 import GroupBox from "../components/GroupBox/GroupBox";
 import Led from "../components/Led/led";
-import ProgressBar from "../components/ProgressBar/progressBar";
-import TextEntry from "../components/TextEntry/textEntry";
-import TextRead from "../components/TextRead/textRead";
+import { ProgressBar } from "../components/widgets";
+import { TextEntry } from "../components/widgets";
+import { TextRead } from "../components/widgets";
 import { Box } from "@mui/material";
 
 export default function DCMScreen() {
     return (
-        <Box sx={{ backgroundColor: "rgba(240, 240, 240)", position: "absolute", left: 0, top: 0, width: 1280, height: 430 }}>
+        <Box sx={{ position: "absolute", left: 0, top: 0, width: 1280, height: 430 }}>
             <GroupBox x={0} y={0} w={340} h={90} value={"Embedded"}>
                 <ActionButton x={50} y={5} w={40} h={20} value="STOP" openScreen={false}></ActionButton>
                 <ActionButton x={5} y={5} w={40} h={20} value="GEAR" openScreen={true}></ActionButton>

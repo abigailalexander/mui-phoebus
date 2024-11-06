@@ -23,9 +23,9 @@ type ProgressBarComponentProps = {
     value: number,
 }
 
-type ProgressBarProps = BaseProps & ProgressBarComponentProps;
+export type ProgressBarProps = BaseProps & ProgressBarComponentProps;
 
-export default function ProgressBar(props: ProgressBarProps) {
+export default function PhoebusProgressBar(props: ProgressBarProps) {
     const groupShift = props.inGroup ? 8 : 0;
     // Could also possibly add a box shadow like you get in phoebus
     // TO DO LATER

@@ -44,9 +44,9 @@ type DropDownComponentProps = {
     value: string[],
 }
 
-type DropDownProps = BaseProps & DropDownComponentProps;
+export type DropDownProps = BaseProps & DropDownComponentProps;
 
-export default function DropDown(props: DropDownProps) {
+export default function PhoebusDropDown(props: DropDownProps) {
     const groupShift = props.inGroup ? 8 : 0;
     let firstValue = props.value[0] || "";
     const [value, setValue] = React.useState(firstValue);

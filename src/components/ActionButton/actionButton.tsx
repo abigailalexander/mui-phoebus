@@ -9,7 +9,7 @@ type ActionButtonComponentProps = {
     fontSize?: number
 }
 
-type ActionButtonProps = BaseProps & ActionButtonComponentProps;
+export type ActionButtonProps = BaseProps & ActionButtonComponentProps;
 
 const CustomButton = styled(Button)({
     position: "absolute",
@@ -36,7 +36,7 @@ const CustomButton = styled(Button)({
     }
 })
 
-export default function ActionButton(props: ActionButtonProps) {
+export default function PhoebusActionButton(props: ActionButtonProps) {
     const groupShift = props.inGroup ? 8 : 0;
     let textColor = "primary.main";
     let bgColor = "primary.contrastText";

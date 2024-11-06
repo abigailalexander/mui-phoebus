@@ -27,9 +27,9 @@ type TextReadComponentProps = {
     value: string | number,
 }
 
-type TextReadProps = BaseProps & TextReadComponentProps;
+export type TextReadProps = BaseProps & TextReadComponentProps;
 
-export default function TextRead(props: TextReadProps) {
+export default function PhoebusTextRead(props: TextReadProps) {
     const groupShift = props.inGroup ? 8 : 0;
     return (
         <CustomTextField sx={{ "& .MuiInputBase-input.MuiOutlinedInput-input": { height: props.h }, left: props.x + groupShift, top: props.y, width: props.w, height: props.h }} value={props.value} variant="outlined" disabled={true}></CustomTextField>

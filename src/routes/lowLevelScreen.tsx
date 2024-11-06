@@ -1,16 +1,16 @@
 import * as React from "react";
-import ActionButton from "../components/ActionButton/actionButton";
+import { ActionButton } from "../components/widgets";
 import GroupBox from "../components/GroupBox/GroupBox";
 import Led from "../components/Led/led";
-import TextEntry from "../components/TextEntry/textEntry";
-import TextRead from "../components/TextRead/textRead";
+import { TextEntry } from "../components/widgets";
+import { TextRead } from "../components/widgets";
 import { Box } from "@mui/material";
-import Label from "../components/Label/label";
-import DropDown from "../components/DropDown/dropDown";
+import { Label } from "../components/widgets";
+import { DropDown } from "../components/widgets";
 
 export default function LowLevelScreen() {
     return (
-        <Box sx={{ position: "absolute", left: 0, top: 0, width: 1200, height: 700, backgroundColor: "rgba(240, 240, 240, 255)" }}>
+        <Box sx={{ position: "absolute", left: 0, top: 0, width: 1200, height: 700 }}>
             <GroupBox x={0} y={25} w={325} h={331} value={"INPUTS"}>
                 <Label x={0} y={0} w={65} h={20} value="Label" ></Label>
                 <TextEntry x={70} y={0} w={205} h={20} value={"Sequencer"} disabled={false}></TextEntry>

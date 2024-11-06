@@ -10,7 +10,7 @@ type ChoiceButtonComponentProps = {
     value: string[],
 }
 
-type ChoiceButtonProps = BaseProps & ChoiceButtonComponentProps;
+export type ChoiceButtonProps = BaseProps & ChoiceButtonComponentProps;
 
 const CustomToggleButton = styled(ToggleButton)({
     position: "absolute",
@@ -39,7 +39,7 @@ const CustomToggleButton = styled(ToggleButton)({
     }
 })
 
-export default function ChoiceButton(props: ChoiceButtonProps) {
+export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
     const groupShift = props.inGroup ? 8 : 0;
     const [alignment, setAlignment] = React.useState(props.value[0]);
     // TO DO
