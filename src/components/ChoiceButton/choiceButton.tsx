@@ -49,7 +49,7 @@ export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
      */
     return (
         <ToggleButtonGroup
-            sx={{ left: props.x, top: props.y, width: props.w, height: props.h }}
+            sx={{ width: props.w, height: props.h }}
             color="primary"
             value={alignment}
             exclusive
@@ -57,7 +57,7 @@ export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, height: props.h, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
             })}
         </ToggleButtonGroup>
     );
@@ -73,15 +73,15 @@ export function MuiChoiceButton(props: ChoiceButtonProps) {
      */
     return (
         <ToggleButtonGroup
-            sx={{ left: props.x, top: props.y, width: props.w, height: props.h }}
+            sx={{ position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h }}
             color="primary"
             value={alignment}
             exclusive
             onChange={(e, newAlignment) => { setAlignment(newAlignment) }}
             aria-label="test"
         >
-            {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+            {props.value.map((item, idx) => {
+                return (<ToggleButton sx={{ height: props.h, width: props.w / 2, textTransform: "none", fontSize: 14 }} value={item} key={item}>{item}</ToggleButton>)
             })}
         </ToggleButtonGroup>
     );
