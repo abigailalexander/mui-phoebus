@@ -13,7 +13,6 @@ type ChoiceButtonComponentProps = {
 export type ChoiceButtonProps = BaseProps & ChoiceButtonComponentProps;
 
 const CustomToggleButton = styled(ToggleButton)({
-    position: "absolute",
     fontFamily: "Arial",
     fontSize: 14,
     color: "black",
@@ -42,14 +41,9 @@ const CustomToggleButton = styled(ToggleButton)({
 export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
     const groupShift = props.inGroup ? 8 : 0;
     const [alignment, setAlignment] = React.useState(props.value[0]);
-    // TO DO
-    /**
-     * add shadow to focus blue border
-     * add shadow to button itself
-     */
     return (
         <ToggleButtonGroup
-            sx={{ width: props.w, height: props.h }}
+            sx={{ position: "absolute", left: props.x + groupShift, top: props.y, width: props.w, height: props.h }}
             color="primary"
             value={alignment}
             exclusive
@@ -57,7 +51,7 @@ export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ left: props.x + groupShift, top: props.y, height: props.h, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+                return (<CustomToggleButton sx={{ height: props.h, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
             })}
         </ToggleButtonGroup>
     );
