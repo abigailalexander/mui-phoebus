@@ -3,7 +3,6 @@ import { createTheme } from '@mui/material/styles';
 
 export const muiTheme = createTheme({
     palette: {
-        mode: import.meta.env.VITE_MUI_LIGHT_MODE === "light" ? "light" : "dark",
         ...(import.meta.env.VITE_MUI_LIGHT_MODE === "light" ? {
             primary: {
                 main: "rgba(29, 41, 69)",
