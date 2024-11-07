@@ -8,8 +8,6 @@ import PhoebusTextEntry, { TextEntryProps, MuiTextEntry } from "./TextEntry/text
 import PhoebusTextRead, { TextReadProps, MuiTextRead } from "./TextRead/textRead";
 
 export function Label(props: LabelProps) {
-    console.log(import.meta.env.VITE_COMPONENT_STYLE)
-    console.log(import.meta.env.VITE_TEST)
     if (import.meta.env.VITE_COMPONENT_STYLE === "mui") {
         return <MuiLabel {...props} />
     }
