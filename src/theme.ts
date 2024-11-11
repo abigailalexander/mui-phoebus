@@ -11,8 +11,8 @@ const palette = import.meta.env.VITE_MUI_LIGHT_MODE === "true" ? {
 } : {
     primary: {
         main: "#90caf9",
-        light: "#e3f2fd",
-        dark: "rgba(76, 100, 171)",
+        light: "rgba(128, 255, 255)",
+        dark: "#42a5f5",
         contrastText: "rgba(29, 41, 69)"
     },
 }
