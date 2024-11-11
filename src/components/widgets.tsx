@@ -6,6 +6,7 @@ import PhoebusDropDown, { DropDownProps, MuiDropDown } from "./DropDown/dropDown
 import PhoebusProgressBar, { ProgressBarProps, MuiProgressBar } from "./ProgressBar/progressBar";
 import PhoebusTextEntry, { TextEntryProps, MuiTextEntry } from "./TextEntry/textEntry";
 import PhoebusTextRead, { TextReadProps, MuiTextRead } from "./TextRead/textRead";
+import PhoebusGroupBox, { GroupBoxProps, MuiGroupBox } from "./GroupBox/GroupBox";
 
 export function Label(props: LabelProps) {
     if (import.meta.env.VITE_COMPONENT_STYLE === "mui") {
@@ -33,6 +34,13 @@ export function DropDown(props: DropDownProps) {
         return <MuiDropDown {...props} />
     }
     return <PhoebusDropDown {...props} />
+}
+
+export function GroupBox(props: GroupBoxProps) {
+    if (import.meta.env.VITE_COMPONENT_STYLE === "mui") {
+        return <MuiGroupBox {...props} />
+    }
+    return <PhoebusGroupBox {...props} />
 }
 
 export function ProgressBar(props: ProgressBarProps) {

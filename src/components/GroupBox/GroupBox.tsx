@@ -1,16 +1,15 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import { Box, Card, CardContent, CardHeader, Typography, useTheme } from "@mui/material";
+import { BaseProps } from "../../utils/baseProps";
 
-type GroupBoxProps = {
-    x: number,
-    y: number,
-    w: number,
-    h: number,
+type GroupBoxComponentProps = {
     value: string,
     children: any
 }
 
-export default function GroupBox(props: GroupBoxProps) {
+export type GroupBoxProps = BaseProps & GroupBoxComponentProps;
+
+export default function PhoebusGroupBox(props: GroupBoxProps) {
     const renderChildren = () => {
         return React.Children.map(props.children, (child) => {
             return React.cloneElement(child, {
@@ -25,5 +24,29 @@ export default function GroupBox(props: GroupBoxProps) {
                 {renderChildren()}
             </Box>
         </div>
+    )
+}
+
+export function MuiGroupBox(props: GroupBoxProps) {
+    const palette = useTheme().palette
+    const borderColor = import.meta.env.VITE_MUI_LIGHT_MODE === "true" ? palette.grey[400] : palette.grey[800];
+    const renderChildren = () => {
+        return React.Children.map(props.children, (child) => {
+            return React.cloneElement(child, {
+                inGroup: true,
+            });
+        });
+    };
+    return (
+        <div style={{ position: "absolute", width: props.w, height: props.h, left: props.x, top: props.y, }}>
+            <Card sx={{ position: "absolute", width: props.w - 20, height: props.h - 10, left: 10, top: 5, border: `1px solid ${borderColor}` }}>
+                <CardHeader title={props.value} sx={{ height: 10, textAlign: "left", position: "absolute", top: 0 }} titleTypographyProps={{ fontSize: 14, noWrap: true, top: 2, position: "absolute" }}>
+                    <Typography>Hello</Typography>
+                </CardHeader>
+                <CardContent sx={{ height: props.h - 20, width: props.w - 30, position: "absolute", top: 20 }}>
+                    {renderChildren()}
+                </CardContent>
+            </Card>
+        </div >
     )
 }
