@@ -1,23 +1,26 @@
 import * as React from 'react';
 import { createTheme } from '@mui/material/styles';
 
+const palette = import.meta.env.VITE_MUI_LIGHT_MODE === "true" ? {
+    primary: {
+        main: "rgba(29, 41, 69)",
+        light: "rgba(128, 255, 255)",
+        dark: "rgba(76, 100, 171)",
+        contrastText: "rgba(255, 255, 255)"
+    },
+} : {
+    primary: {
+        main: "#90caf9",
+        light: "#e3f2fd",
+        dark: "rgba(76, 100, 171)",
+        contrastText: "rgba(29, 41, 69)"
+    },
+}
+
 export const muiTheme = createTheme({
     palette: {
-        ...(import.meta.env.VITE_MUI_LIGHT_MODE === "light" ? {
-            primary: {
-                main: "rgba(29, 41, 69)",
-                light: "rgba(128, 255, 255)",
-                dark: "rgba(76, 100, 171)",
-                contrastText: "rgba(255, 255, 255)"
-            },
-        } : {
-            primary: {
-                main: "#90caf9",
-                light: "#e3f2fd",
-                dark: "rgba(76, 100, 171)",
-                contrastText: "rgba(29, 41, 69)"
-            },
-        })
+        mode: import.meta.env.VITE_MUI_LIGHT_MODE === "true" ? "light" : "dark",
+        ...palette
     }
 });
 
