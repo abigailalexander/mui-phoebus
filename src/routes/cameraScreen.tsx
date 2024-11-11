@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ActionButton, DropDown } from "../components/widgets";
-import GroupBox from "../components/GroupBox/GroupBox";
+import { GroupBox } from "../components/widgets";
 import Led from "../components/Led/led";
 import { TextEntry } from "../components/widgets";
 import { TextRead } from "../components/widgets";
@@ -9,7 +9,6 @@ import { Label } from "../components/widgets";
 import { ChoiceButton } from "../components/widgets";
 
 export default function CameraScreen() {
-    console.log(typeof import.meta.env.VITE_MUI_LIGHT_MODE)
     return (
         <Box sx={{ position: "absolute", left: 0, top: 0, width: 1280, height: 800 }}>
             <GroupBox x={0} y={38} w={410} h={304} value={"CAMERA"}>

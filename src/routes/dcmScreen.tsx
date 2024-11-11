@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ActionButton } from "../components/widgets";
-import GroupBox from "../components/GroupBox/GroupBox";
+import { GroupBox } from "../components/widgets";
 import Led from "../components/Led/led";
 import { ProgressBar } from "../components/widgets";
 import { TextEntry } from "../components/widgets";
