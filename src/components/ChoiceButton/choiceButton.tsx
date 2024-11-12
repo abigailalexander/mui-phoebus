@@ -51,7 +51,7 @@ export default function PhoebusChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item) => {
-                return (<CustomToggleButton sx={{ height: props.h, width: props.w / 2 }} value={item} key={item}>{item}</CustomToggleButton>)
+                return (<CustomToggleButton sx={{ height: props.h, width: props.w / 2, padding: 0 }} value={item} key={item}>{item}</CustomToggleButton>)
             })}
         </ToggleButtonGroup>
     );
@@ -75,7 +75,7 @@ export function MuiChoiceButton(props: ChoiceButtonProps) {
             aria-label="test"
         >
             {props.value.map((item, idx) => {
-                return (<ToggleButton sx={{ height: props.h, width: props.w / 2, textTransform: "none", fontSize: 14 }} value={item} key={item}>{item}</ToggleButton>)
+                return (<ToggleButton sx={{ height: props.h, width: props.w / 2, textTransform: "none", fontSize: 14, padding: 0 }} value={item} key={item}>{item}</ToggleButton>)
             })}
         </ToggleButtonGroup>
     );
