@@ -40,10 +40,10 @@ export function MuiGroupBox(props: GroupBoxProps) {
     return (
         <div style={{ position: "absolute", width: props.w, height: props.h, left: props.x, top: props.y, }}>
             <Card sx={{ position: "absolute", width: props.w - 20, height: props.h - 10, left: 10, top: 5, border: `1px solid ${borderColor}` }}>
-                <CardHeader title={props.value} sx={{ height: 10, textAlign: "left", position: "absolute", top: 0 }} titleTypographyProps={{ fontSize: 14, noWrap: true, top: 2, position: "absolute" }}>
+                <CardHeader title={props.value} sx={{ height: 10, width: props.w - 20, textAlign: "left", position: "absolute", top: 0 }} titleTypographyProps={{ fontSize: 14, noWrap: true, top: 2, position: "absolute" }}>
                     <Typography>Hello</Typography>
                 </CardHeader>
-                <CardContent sx={{ height: props.h - 20, width: props.w - 30, position: "absolute", top: 20 }}>
+                <CardContent sx={{ height: props.h - 10, width: props.w - 20, position: "absolute", top: 20, padding: "0px 0px" }}>
                     {renderChildren()}
                 </CardContent>
             </Card>
