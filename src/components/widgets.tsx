@@ -7,6 +7,8 @@ import PhoebusProgressBar, { ProgressBarProps, MuiProgressBar } from "./Progress
 import PhoebusTextEntry, { TextEntryProps, MuiTextEntry } from "./TextEntry/textEntry";
 import PhoebusTextRead, { TextReadProps, MuiTextRead } from "./TextRead/textRead";
 import PhoebusGroupBox, { GroupBoxProps, MuiGroupBox } from "./GroupBox/GroupBox";
+import { BaseProps } from "../utils/baseProps";
+import MuiDivider from "./Rectangle/rectangle";
 
 export function Label(props: LabelProps) {
     if (import.meta.env.VITE_COMPONENT_STYLE === "mui") {
@@ -27,6 +29,13 @@ export function ChoiceButton(props: ChoiceButtonProps) {
         return <MuiChoiceButton {...props} />
     }
     return <PhoebusChoiceButton {...props} />
+}
+
+export function Divider(props: BaseProps) {
+    if (import.meta.env.VITE_COMPONENT_STYLE === "mui") {
+        return <MuiDivider {...props} />
+    }
+    return <MuiDivider {...props} />
 }
 
 export function DropDown(props: DropDownProps) {
